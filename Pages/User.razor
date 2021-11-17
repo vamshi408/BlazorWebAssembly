@@ -1,0 +1,61 @@
+﻿@page "/user";
+@using BlazorWebAssembly.Models
+
+
+<h3>User</h3>
+
+
+
+<DataGrid TItem="UserModel"
+          Data="@employeeList"
+          SelectionMode="DataGridSelectionMode.Multiple"
+          @bind-SelectedRows="selectedEmployees"
+          Sortable="true"
+          Filterable="true"
+          ShowPager="true"
+          ShowPageSizes="true"
+          PageSize="5"
+          Bordered="true"
+          Narrow="true"
+          Resizable="true"
+          Responsive>
+    <DataGridMultiSelectColumn TItem="UserModel" Width="30px"></DataGridMultiSelectColumn>
+    <DataGridCommandColumn TItem="UserModel" />
+    <DataGridColumn TItem="UserModel" Field="@nameof(UserModel.UserID)" Caption="#" Sortable="true" />
+    <DataGridColumn TItem="UserModel" Field="@nameof(UserModel.PrefID)" Caption="Preffer ID" Editable="true" />
+    <DataGridColumn TItem="UserModel" Field="@nameof(UserModel.Email)" Caption="Email" Editable="true" />
+    <DataGridColumn TItem="UserModel" Field="@nameof(UserModel.PhoneNo)" Caption="Phone No" Editable="true" />
+    <DataGridColumn TItem="UserModel" Field="@nameof(UserModel.DOB)" Caption="DOB" Editable="true" />
+    <DataGridColumn TItem="UserModel" Field="@nameof(UserModel.FirstName)" Caption="First Name" Editable="true" />
+    <DataGridColumn TItem="UserModel" Field="@nameof(UserModel.MiddleName)" Caption="Middle Name" Editable="true" />
+    <DataGridColumn TItem="UserModel" Field="@nameof(UserModel.LastName)" Caption="Last Name" Editable="true" />
+    <DataGridColumn TItem="UserModel" Field="@nameof(UserModel.DisplayName)" Caption="Display Name" Editable="true" />
+
+</DataGrid>
+<hr />
+<h3>Selected User List</h3>
+
+<DataGrid TItem="UserModel"
+          Data="@selectedEmployees"
+          Sortable="true"
+          Filterable="true"
+          ShowPager="true"
+          ShowPageSizes="true"
+          PageSize="5"
+          Bordered="true"
+          Narrow="true"
+          Resizable="true"
+          Responsive>
+    <DataGridMultiSelectColumn TItem="UserModel" Width="30px"></DataGridMultiSelectColumn>
+    <DataGridCommandColumn TItem="UserModel" />
+    <DataGridColumn TItem="UserModel" Field="@nameof(UserModel.UserID)" Caption="#" Sortable="true" />
+    <DataGridColumn TItem="UserModel" Field="@nameof(UserModel.PrefID)" Caption="Preffer ID" Editable="true" />
+    <DataGridColumn TItem="UserModel" Field="@nameof(UserModel.Email)" Caption="Email" Editable="true" />
+    <DataGridColumn TItem="UserModel" Field="@nameof(UserModel.PhoneNo)" Caption="Phone No" Editable="true" />
+    <DataGridColumn TItem="UserModel" Field="@nameof(UserModel.DOB)" Caption="DOB" Editable="true" />
+    <DataGridColumn TItem="UserModel" Field="@nameof(UserModel.FirstName)" Caption="First Name" Editable="true" />
+    <DataGridColumn TItem="UserModel" Field="@nameof(UserModel.MiddleName)" Caption="Middle Name" Editable="true" />
+    <DataGridColumn TItem="UserModel" Field="@nameof(UserModel.LastName)" Caption="Last Name" Editable="true" />
+    <DataGridColumn TItem="UserModel" Field="@nameof(UserModel.DisplayName)" Caption="Display Name" Editable="true" />
+
+</DataGrid>
